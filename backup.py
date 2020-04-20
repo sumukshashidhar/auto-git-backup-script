@@ -1,5 +1,5 @@
 ## this program requires the use of an ssh method, else, a password will have to be passed
-
+## this is helpful for syncing logs and the such from a remote server to github
 
 
 import schedule
@@ -8,8 +8,7 @@ import os
 import time
 from time import ctime
 
-
-duration = 10 ## enter the duration in minutes here
+duration = 1000 ## enter the duration in seconds here -> backup duration
 password = ''
 
 def ssh_backup():
@@ -22,7 +21,8 @@ def ssh_backup():
 while True:
 	#schedule.run_pending()
 	ssh_backup()
-	time.sleep(1000)
+	print("keep me running, I'm just sleeping for 1000 seconds now")
+	time.sleep(duration)
 
 
 
